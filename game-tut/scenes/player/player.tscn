@@ -1,13 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1gxc528a5380"]
+[gd_scene load_steps=4 format=3 uid="uid://d1gxc528a5380"]
 
 [ext_resource type="Texture2D" uid="uid://mf7lf12lx6w7" path="res://graphics/player/player.png" id="1_dovo2"]
-[ext_resource type="Texture2D" uid="uid://hu28b83pye8r" path="res://graphics/projectiles/blue.png" id="2_gmlin"]
+[ext_resource type="Script" uid="uid://cokdlinmlb6k" path="res://scenes/player/player.gd" id="1_gmlin"]
 
-[node name="Player" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_dovo2"]
+radius = 51.0392
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_gmlin")
 
 [node name="playerSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -25)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("1_dovo2")
 
-[node name="laser" type="Sprite2D" parent="playerSprite"]
-position = Vector2(19, -165)
-texture = ExtResource("2_gmlin")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dovo2")
