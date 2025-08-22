@@ -1,5 +1,6 @@
-extends Node2D
+extends StaticBody2D
 
+signal player_entered_gate
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -10,20 +11,5 @@ func _process(_delta: float) -> void:
 	pass
 
 
-# 2:53:25
-
-
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-	pass # Replace with function body.
-
-
-func _on_gate_player_entered_gate() -> void:
-	print("Player has entered gate")
-
-
-func _on_player_laser() -> void:
-	print("Laser fired")
-
-
-func _on_player_grenade() -> void:
-	print("Grenade launched")
+	player_entered_gate.emit()
