@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 	pass
 
 
-# 3:52:25
+# 4:23:13
 
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
