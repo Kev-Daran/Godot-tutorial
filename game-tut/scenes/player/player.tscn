@@ -7,6 +7,7 @@
 radius = 51.0392
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 31
 script = ExtResource("1_gmlin")
 
 [node name="playerSprite" type="Sprite2D" parent="."]

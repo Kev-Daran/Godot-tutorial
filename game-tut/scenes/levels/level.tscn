@@ -34,7 +34,7 @@ tile_map_data = PackedByteArray("AAD8//3/AAAAAAAAAAD8//7/AAAAAAEAAAD8////AAAAAAE
 tile_set = SubResource("TileSet_d4w6o")
 
 [node name="House" parent="." instance=ExtResource("5_urvlt")]
-position = Vector2(-2931, 1782)
+position = Vector2(-2964, 1424)
 rotation = -1.2322
 
 [node name="Gate" parent="." instance=ExtResource("2_bovvr")]
