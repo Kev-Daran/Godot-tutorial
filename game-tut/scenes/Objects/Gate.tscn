@@ -21,4 +21,5 @@ polygon = PackedVector2Array(-1430, -775, -1436, 552, -1420, 615, -1392, 665, -1
 position = Vector2(61, 657.5)
 shape = SubResource("RectangleShape2D_bvwt6")
 
+[connection signal="player_entered_gate" from="." to="." method="_on_player_entered_gate"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

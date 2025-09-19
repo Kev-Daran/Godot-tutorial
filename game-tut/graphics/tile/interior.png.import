@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csfsch27bp1lj"
-path="res://.godot/imported/ceiling.png-220a4a1ebc8db172cd53d96779f84ed5.ctex"
+uid="uid://b6ecnycx3hhmt"
+path="res://.godot/imported/interior.png-8916311b547396b91f73f50bae861d87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/tilesets/ceiling.png"
-dest_files=["res://.godot/imported/ceiling.png-220a4a1ebc8db172cd53d96779f84ed5.ctex"]
+source_file="res://graphics/tile/interior.png"
+dest_files=["res://.godot/imported/interior.png-8916311b547396b91f73f50bae861d87.ctex"]
 
 [params]
 

@@ -46,3 +46,7 @@ func _on_laser_timer_timeout() -> void:
 
 func _on_grenade_timer_timeout() -> void:
 	can_grenade = true
+
+
+func _on_laser(pos: Variant, direction: Variant) -> void:
+	pass # Replace with function body.

@@ -1,112 +1,51 @@
-[gd_scene load_steps=17 format=3 uid="uid://6jagjudp3dic"]
+[gd_scene load_steps=8 format=4 uid="uid://d6odxdi1p8br"]
 
-[ext_resource type="Script" uid="uid://c7gc0tk5b5rsw" path="res://scenes/levels/level.gd" id="1_b2cq8"]
-[ext_resource type="Texture2D" uid="uid://cebk7bekb536l" path="res://graphics/ground/stones.png" id="2_xb4v1"]
-[ext_resource type="PackedScene" uid="uid://mgoa5s8l8gua" path="res://scenes/Objects/Gate.tscn" id="3_b2cq8"]
-[ext_resource type="Texture2D" uid="uid://dxdhgtp5e3h7s" path="res://graphics/decals/dirt_patch.png" id="3_urvlt"]
-[ext_resource type="Texture2D" uid="uid://4ctdqocyx65g" path="res://graphics/decals/moss/moss_1.png" id="4_rmjfq"]
-[ext_resource type="PackedScene" uid="uid://d1gxc528a5380" path="res://scenes/player/player.tscn" id="4_xb4v1"]
-[ext_resource type="Texture2D" uid="uid://pmrc7r2d63po" path="res://graphics/decals/moss/moss_2.png" id="5_7pb6i"]
-[ext_resource type="Texture2D" uid="uid://b0atf70mbsiql" path="res://graphics/decals/moss/moss_3.png" id="6_xfk5q"]
-[ext_resource type="Texture2D" uid="uid://bqb5dxvaem47o" path="res://graphics/decals/moss/moss_4.png" id="7_qogh7"]
-[ext_resource type="Texture2D" uid="uid://dyf8cyms1jrlw" path="res://graphics/decals/moss/moss_5.png" id="8_8iyoh"]
-[ext_resource type="Texture2D" uid="uid://bmbkqyimslfek" path="res://graphics/tilesets/outside_walls.png" id="9_7pb6i"]
-[ext_resource type="Texture2D" uid="uid://nvhiasr420vf" path="res://graphics/tilesets/soil.png" id="10_xfk5q"]
-[ext_resource type="PackedScene" uid="uid://qhkcdhamad6g" path="res://scenes/levels/house.tscn" id="13_qogh7"]
+[ext_resource type="Script" uid="uid://bxvb0a37r0va7" path="res://scenes/levels/level.gd" id="1_377w7"]
+[ext_resource type="PackedScene" uid="uid://mgoa5s8l8gua" path="res://scenes/Objects/Gate.tscn" id="2_bovvr"]
+[ext_resource type="Texture2D" uid="uid://ws051tn77muj" path="res://graphics/tile/soil.png" id="2_xb4v1"]
+[ext_resource type="PackedScene" uid="uid://d1gxc528a5380" path="res://scenes/player/player.tscn" id="3_b2cq8"]
+[ext_resource type="PackedScene" uid="uid://cgx1tufcrlgr1" path="res://scenes/Objects/house.tscn" id="5_urvlt"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xfk5q"]
-resource_name = "walls"
-texture = ExtResource("9_7pb6i")
-texture_region_size = Vector2i(390, 390)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-0:3/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qogh7"]
-resource_name = "soil"
-texture = ExtResource("10_xfk5q")
-texture_region_size = Vector2i(390, 390)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_qogh7"]
-tile_size = Vector2i(390, 390)
-sources/0 = SubResource("TileSetAtlasSource_xfk5q")
-sources/1 = SubResource("TileSetAtlasSource_qogh7")
-
-[node name="Level" type="Node2D"]
-script = ExtResource("1_b2cq8")
-
-[node name="Ground" type="Node2D" parent="."]
-
-[node name="Soil" type="Sprite2D" parent="Ground"]
-texture_repeat = 2
-position = Vector2(615, 282)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_urvlt"]
+resource_name = "ground"
 texture = ExtResource("2_xb4v1")
-region_enabled = true
-region_rect = Rect2(-3914.59, -2407.82, 16000, 10000)
+texture_region_size = Vector2i(390, 390)
+use_texture_padding = false
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
 
-[node name="Decoration" type="Sprite2D" parent="Ground"]
-modulate = Color(0.941774, 0.472507, 1.92523e-07, 1)
-position = Vector2(-554, 911)
-texture = ExtResource("3_urvlt")
+[sub_resource type="TileSet" id="TileSet_d4w6o"]
+tile_size = Vector2i(390, 390)
+sources/0 = SubResource("TileSetAtlasSource_urvlt")
 
-[node name="Moss1" type="Sprite2D" parent="Ground"]
-position = Vector2(1714, 1123)
-texture = ExtResource("4_rmjfq")
+[node name="level" type="Node2D"]
+script = ExtResource("1_377w7")
 
-[node name="Moss2" type="Sprite2D" parent="Ground"]
-position = Vector2(1998, 322)
-texture = ExtResource("5_7pb6i")
+[node name="ground" type="TileMapLayer" parent="."]
+position = Vector2(-399, -440)
+tile_map_data = PackedByteArray("AAD8//3/AAAAAAAAAAD8//7/AAAAAAEAAAD8////AAAAAAEAAAD8/wAAAAAAAAEAAAD8/wEAAAAAAAEAAAD8/wIAAAAAAAEAAAD8/wMAAAAAAAEAAAD8/wQAAAAAAAEAAAD8/wUAAAAAAAEAAAD8/wYAAAAAAAIAAAD9/wYAAAABAAIAAAD+/wYAAAABAAIAAAD//wYAAAABAAIAAAAAAAYAAAABAAIAAAABAAYAAAABAAIAAAACAAYAAAABAAIAAAADAAYAAAABAAIAAAAEAAYAAAABAAIAAAAFAAYAAAABAAIAAAAGAAYAAAABAAIAAAAHAAYAAAABAAIAAAAIAAYAAAACAAIAAAAIAAUAAAACAAEAAAAIAAQAAAACAAEAAAAIAAMAAAACAAEAAAAIAAIAAAACAAEAAAAIAAEAAAACAAEAAAAIAAAAAAACAAEAAAAIAP//AAACAAEAAAAIAP7/AAACAAEAAAAIAP3/AAACAAAAAAD9//3/AAABAAAAAAD+//3/AAABAAAAAAD///3/AAABAAAAAAAAAP3/AAABAAAAAAABAP3/AAABAAAAAAACAP3/AAABAAAAAAADAP3/AAABAAAAAAAEAP3/AAABAAAAAAAFAP3/AAABAAAAAAAGAP3/AAABAAAAAAAHAP3/AAABAAAAAAD9//7/AAABAAEAAAD9////AAABAAEAAAD9/wAAAAABAAEAAAD9/wEAAAABAAEAAAD9/wIAAAABAAEAAAD9/wMAAAABAAEAAAD9/wQAAAABAAEAAAD9/wUAAAABAAEAAAD+//7/AAABAAEAAAD+////AAABAAEAAAD+/wAAAAABAAEAAAD+/wEAAAABAAEAAAD+/wIAAAABAAEAAAD+/wMAAAABAAEAAAD+/wQAAAABAAEAAAD+/wUAAAABAAEAAAD///7/AAABAAEAAAD/////AAABAAEAAAD//wAAAAABAAEAAAD//wEAAAABAAEAAAD//wIAAAABAAEAAAD//wMAAAABAAEAAAD//wQAAAABAAEAAAD//wUAAAABAAEAAAAAAP7/AAABAAEAAAAAAP//AAABAAEAAAAAAAAAAAABAAEAAAAAAAEAAAABAAEAAAAAAAIAAAABAAEAAAAAAAMAAAABAAEAAAAAAAQAAAABAAEAAAAAAAUAAAABAAEAAAABAP7/AAABAAEAAAABAP//AAABAAEAAAABAAAAAAABAAEAAAABAAEAAAABAAEAAAABAAIAAAABAAEAAAABAAMAAAABAAEAAAABAAQAAAABAAEAAAABAAUAAAABAAEAAAACAP7/AAABAAEAAAACAP//AAABAAEAAAACAAAAAAABAAEAAAACAAEAAAABAAEAAAACAAIAAAABAAEAAAACAAMAAAABAAEAAAACAAQAAAABAAEAAAACAAUAAAABAAEAAAADAP7/AAABAAEAAAADAP//AAABAAEAAAADAAAAAAABAAEAAAADAAEAAAABAAEAAAADAAIAAAABAAEAAAADAAMAAAABAAEAAAADAAQAAAABAAEAAAADAAUAAAABAAEAAAAEAP7/AAABAAEAAAAEAP//AAABAAEAAAAEAAAAAAABAAEAAAAEAAEAAAABAAEAAAAEAAIAAAABAAEAAAAEAAMAAAABAAEAAAAEAAQAAAABAAEAAAAEAAUAAAABAAEAAAAFAP7/AAABAAEAAAAFAP//AAABAAEAAAAFAAAAAAABAAEAAAAFAAEAAAABAAEAAAAFAAIAAAABAAEAAAAFAAMAAAABAAEAAAAFAAQAAAABAAEAAAAFAAUAAAABAAEAAAAGAP7/AAABAAEAAAAGAP//AAABAAEAAAAGAAAAAAABAAEAAAAGAAEAAAABAAEAAAAGAAIAAAABAAEAAAAGAAMAAAABAAEAAAAGAAQAAAABAAEAAAAGAAUAAAABAAEAAAAHAP7/AAABAAEAAAAHAP//AAABAAEAAAAHAAAAAAABAAEAAAAHAAEAAAABAAEAAAAHAAIAAAABAAEAAAAHAAMAAAABAAEAAAAHAAQAAAABAAEAAAAHAAUAAAABAAEAAAA=")
+tile_set = SubResource("TileSet_d4w6o")
 
-[node name="Moss3" type="Sprite2D" parent="Ground"]
-position = Vector2(847, 1245)
-texture = ExtResource("6_xfk5q")
+[node name="House" parent="." instance=ExtResource("5_urvlt")]
+position = Vector2(-2931, 1782)
+rotation = -1.2322
 
-[node name="Moss4" type="Sprite2D" parent="Ground"]
-position = Vector2(1558, 1507)
-texture = ExtResource("7_qogh7")
+[node name="Gate" parent="." instance=ExtResource("2_bovvr")]
+position = Vector2(584, -450)
 
-[node name="Moss5" type="Sprite2D" parent="Ground"]
-position = Vector2(1914, 739)
-texture = ExtResource("8_8iyoh")
-
-[node name="TileMap" type="TileMap" parent="Ground"]
-tile_set = SubResource("TileSet_qogh7")
-format = 2
-layer_0/name = "soil"
-layer_0/tile_data = PackedInt32Array(65540, 131073, 0, 65539, 1, 0, 131075, 1, 1, 131076, 131073, 1)
-layer_1/name = "walls"
-layer_1/tile_data = PackedInt32Array(131073, 65536, 0, 131074, 65536, 0, 131075, 65536, 0, 131076, 131072, 2, 65540, 0, 2, 4, 0, 1, 196607, 65536, 0, 196606, 65536, 2, 131070, 0, 2, 65534, 0, 2)
-
-[node name="House" parent="." instance=ExtResource("13_qogh7")]
-position = Vector2(-3165, 3272)
-rotation = -0.549779
-
-[node name="Gate" parent="." instance=ExtResource("3_b2cq8")]
-position = Vector2(556, -534)
-
-[node name="Projectiles" type="Node2D" parent="."]
-
-[node name="Player" parent="." instance=ExtResource("4_xb4v1")]
-position = Vector2(562, 361)
+[node name="Player" parent="." instance=ExtResource("3_b2cq8")]
+position = Vector2(662, 528)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position_smoothing_enabled = true
+
+[node name="Projectiles" type="Node" parent="."]
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
