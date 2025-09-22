@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1gxc528a5380"]
+[gd_scene load_steps=7 format=3 uid="uid://d1gxc528a5380"]
 
 [ext_resource type="Texture2D" uid="uid://mf7lf12lx6w7" path="res://graphics/player/player.png" id="1_dovo2"]
 [ext_resource type="Script" uid="uid://cokdlinmlb6k" path="res://scenes/player/player.gd" id="1_gmlin"]
@@ -16,9 +16,24 @@ scale_min = 0.2
 scale_max = 0.8
 color = Color(0, 0.77069, 0.77595, 1)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gmlin"]
+polygon = PackedVector2Array(-39, -44, -26, -48, -12, -54, 5, -56, 16, -57, 25, -46, 34, -33, 45, -30, 55, -19, 64, -20, 71, -14, 80, -14, 83, -9, 91, -10, 94, -7, 98, -2, 96, 11, 92, 14, 89, 11, 89, 16, 80, 16, 71, 22, 67, 29, 43, 28, 40, 21, 30, 18, 20, 24, 13, 26, -4, 34, -21, 34, -30, 26, -34, 15, -42, 8, -41, 2, -47, -6, -47, -17, -48, -26, -41, -35)
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
 script = ExtResource("1_gmlin")
+
+[node name="LaserStartPositions" type="Node2D" parent="."]
+rotation = 1.5708
+
+[node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(2, -94)
+
+[node name="Marker2D2" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(-5, -93)
+
+[node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
+position = Vector2(10, -92)
 
 [node name="playerSprite" type="Sprite2D" parent="."]
 position = Vector2(25, -11)
@@ -37,18 +52,6 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 
-[node name="LaserStartPositions" type="Node2D" parent="."]
-rotation = 1.5708
-
-[node name="Marker2D" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(2, -94)
-
-[node name="Marker2D2" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(-5, -93)
-
-[node name="Marker2D3" type="Marker2D" parent="LaserStartPositions"]
-position = Vector2(10, -92)
-
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(95, 2)
 emitting = false
@@ -57,6 +60,9 @@ lifetime = 0.2
 one_shot = true
 explosiveness = 0.32
 process_material = SubResource("ParticleProcessMaterial_lvxji")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_gmlin")
 
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]

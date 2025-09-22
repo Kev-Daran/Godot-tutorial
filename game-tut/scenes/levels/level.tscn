@@ -51,6 +51,11 @@ position = Vector2(662, 528)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+color = Color(0.665717, 0.335021, 0.367251, 1)
+energy = 1.15
+blend_mode = 1
+
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
