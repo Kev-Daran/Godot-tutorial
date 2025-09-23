@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 	pass
 
 
-# 5:10:00
+# 6:16:00
 
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
@@ -37,3 +37,8 @@ func _on_player_grenade(pos, direction) -> void:
 	grenade.position = pos
 	grenade.linear_velocity = direction * grenade.speed
 	$Projectiles.add_child(grenade)
+
+
+func _on_house_player_entered() -> void:
+	var tween = get_tree().create_tween()
+	tween.tween_property($Player/Camera2D, "zoom", Vector2(1,1), 1)
