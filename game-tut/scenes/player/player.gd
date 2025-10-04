@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 var can_laser : bool = true
 var can_grenade : bool = true
+@export var max_speed: int = 500
+var speed : int = max_speed
+
 
 signal laser(pos, direction)
 signal grenade(pos, direction)
@@ -10,7 +13,7 @@ func _process(_delta: float):
 	
 	# input
 	var direction = Input.get_vector("left", "right", "up", "down")
-	velocity = direction * 500
+	velocity = direction * speed
 	move_and_slide()
 	
 	
@@ -46,7 +49,3 @@ func _on_laser_timer_timeout() -> void:
 
 func _on_grenade_timer_timeout() -> void:
 	can_grenade = true
-
-
-func _on_laser(pos: Variant, direction: Variant) -> void:
-	pass # Replace with function body.
