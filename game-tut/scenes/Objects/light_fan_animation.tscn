@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://b64per4iuyv45"]
+[gd_scene load_steps=52 format=3 uid="uid://b64per4iuyv45"]
 
 [ext_resource type="Texture2D" uid="uid://c5y3j5esk5j7m" path="res://graphics/lights/fan_animation/00000.png" id="1_v8mdm"]
 [ext_resource type="Texture2D" uid="uid://ck6s6jio1i0aw" path="res://graphics/lights/fan_animation/00001.png" id="2_np4cn"]
@@ -49,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://cwyw0fipojydv" path="res://graphics/lights/fan_animation/00046.png" id="47_7p1oo"]
 [ext_resource type="Texture2D" uid="uid://dwpmlc3th24gt" path="res://graphics/lights/fan_animation/00047.png" id="48_0qpbq"]
 [ext_resource type="Texture2D" uid="uid://dimsld45u5wj4" path="res://graphics/lights/textures/circle.png" id="49_np4cn"]
+[ext_resource type="Script" uid="uid://2nyi2unnbm14" path="res://scenes/Objects/light_fan_animation.gd" id="49_qxyjx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tm2hv"]
 animations = [{
@@ -204,7 +205,8 @@ animations = [{
 
 [node name="LightFanAnimation" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_tm2hv")
-frame_progress = 0.469703
+frame_progress = 0.968973
+script = ExtResource("49_qxyjx")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 energy = 1.47
