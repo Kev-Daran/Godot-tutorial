@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://coj1obgvj7tkl"]
+
+[ext_resource type="Texture2D" uid="uid://q4knwt85y571" path="res://graphics/ui/bullet.png" id="1_4xap3"]
+[ext_resource type="Texture2D" uid="uid://bqpcjqme3xeyr" path="res://graphics/ui/grenade.png" id="2_hx2ew"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="LazerCounter" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.005
+anchor_top = 0.925
+anchor_right = 0.01
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LazerCounter"]
+layout_mode = 2
+offset_right = 19.0
+offset_bottom = 83.0
+
+[node name="Label" type="Label" parent="LazerCounter/VBoxContainer"]
+layout_mode = 2
+text = "20"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="LazerCounter/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_4xap3")
+expand_mode = 4
+
+[node name="GrenadeCounter" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.02
+anchor_top = 0.925
+anchor_right = 0.033
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GrenadeCounter"]
+layout_mode = 0
+offset_right = 26.0
+offset_bottom = 53.0
+
+[node name="Label" type="Label" parent="GrenadeCounter/VBoxContainer"]
+layout_mode = 2
+text = "5"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="GrenadeCounter/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_hx2ew")
+expand_mode = 4
